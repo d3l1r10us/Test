@@ -336,7 +336,7 @@ local chanceValues do
                         local noteDelay = isHeld and Options.HeldDelay or Options.ReleaseDelay
 
                         local delay = delayMode == 'Random' and rng:NextNumber(minDelay.Value, maxDelay.Value) or noteDelay.Value
-                        task.wait(arrowLength + (delay / 1))
+                        task.wait(arrowLength + (delay / 1000000))
 
                         pressKey(keyCode, false)
                         arrow.Marked = nil;
