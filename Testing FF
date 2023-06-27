@@ -326,8 +326,8 @@ local chanceValues do
 
                         pressKey(keyCode, true)
 
-                        local arrowLength = arrow.Data.Length or 5
-                        local isHeld = arrowLength > 5
+                        local arrowLength = arrow.Data.Length or 0
+                        local isHeld = arrowLength > 0
 
                         local delayMode = Options.DelayMode.Value
 
