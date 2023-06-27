@@ -326,10 +326,8 @@ local chanceValues do
 
                         pressKey(keyCode, true)
 
-                        local arrowLength = arrow.Data.Length or 0
-                        local isHeld = arrowLength > 0
-
-                        if isHeld then arrowLength = arrowLength / playbackSpeed end
+                        local arrowLength = arrow.Data.Length or -1
+                        local isHeld = arrowLength > -1
 
                         local delayMode = Options.DelayMode.Value
 
