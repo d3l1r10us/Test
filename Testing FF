@@ -326,8 +326,8 @@ local chanceValues do
 
                         pressKey(keyCode, true)
 
-                        local arrowLength = arrow.Data.Length or 5
-                        local isHeld = arrowLength > 5
+                        local arrowLength = arrow.Data.Length or 0
+                        local isHeld = arrowLength > 0
 
                         if isHeld then arrowLength = arrowLength / playbackSpeed end
 
@@ -338,9 +338,9 @@ local chanceValues do
                         local noteDelay = isHeld and Options.HeldDelay or Options.ReleaseDelay
 
                         local delay = delayMode == 'Random' and rng:NextNumber(minDelay.Value, maxDelay.Value) or noteDelay.Value
-                        task.wait(arrowLength + (delay / 1))
+                        task.wait(arrowLength + (delay / 1000))
 
-                        pressKey(keyCode, false)
+                        pressKey(keyCode, true)
                         arrow.Marked = nil;
                     end)
                 end
