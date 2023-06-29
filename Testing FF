@@ -307,7 +307,7 @@ local chanceValues do
                     local playbackSpeed = type(configs) == 'table' and configs.PlaybackSpeed
 
                     if type(playbackSpeed) ~= 'number' then
-                        playbackSpeed = 1
+                        playbackSpeed = 2
                     end
 
                     songTime = songTime /  playbackSpeed
@@ -340,7 +340,7 @@ local chanceValues do
                         local delay = delayMode == 'Random' and rng:NextNumber(minDelay.Value, maxDelay.Value) or noteDelay.Value
                         task.wait(arrowLength + (delay / 1000))
 
-                        pressKey(keyCode, true)
+                        pressKey(keyCode, false)
                         arrow.Marked = nil;
                     end)
                 end
