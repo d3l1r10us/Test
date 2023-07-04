@@ -5,10 +5,6 @@ iskrnlclosure = iskrnlclosure
 local isactor = (fluxus and isactor)
 local getactors = (fluxus and getactors)
 
-local Player = game:GetService("Players").LocalPlayer
-local TeleportService = game:GetService("TeleportService")
-local queue_on_teleport = (fluxus and fluxus.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-
 if not fluxus or not getactors then
     if not queue_on_teleport or iskrnlclosure ~= nil then
         return Player:Kick('[ZombieHD - Error]: executor not supported, sorry!')
