@@ -27,8 +27,8 @@ if game.PlaceId == 445664957 and not _G.Loaded then -- Only run script if playin
     local Moves             = {"slide","dropdown","ledgegrab","edgejump","longjump","vault","wallrun","springboard"}
     local Ban_Traps         = {"AttemptTeleport","FireToDieInstantly","LandWithForceField","LoadString","FlyRequest","FinishTimeTrial","Under3Seconds","UpdateDunceList","HighCombo","r","t","FF"}
 
-    local Is_fluxus        = fluxus and fluxus.run_secure_lua
-    local queueteleport     = fluxus and fluxus.queue_on_teleport or queue_on_teleport or fluxus and fluxus.queue_on_teleport
+    local Is_fluxus        = fluxus and syn.run_secure_lua
+    local queueteleport     = fluxus and syn.queue_on_teleport
 
     -- Declare dynamic variables
     local BagESP_Enabled    = false
@@ -139,11 +139,6 @@ if game.PlaceId == 445664957 and not _G.Loaded then -- Only run script if playin
         task.wait(1)
         LocalPlayer:Kick("Fuck sirhurt. Don't support pedophiles.")
         while true do task.wait() end
-    end
-
-    -- Warn about using unsupported exploits
-    if not Is_fluxus then
-        Notify("fuck hudzell is intended to be used on fluxus. Some features may not work.", false)
     end
 
     -- Init Bracket
@@ -316,8 +311,6 @@ if game.PlaceId == 445664957 and not _G.Loaded then -- Only run script if playin
                 Notify("FastXP cannot be used at level 250 or higher.")
             end
         end)
-    elseif not Is_fluxus then
-        local Error_label = Level_Section:CreateLabel("Fast XP requires\n fluxus.")
     end
 
     -- Teleport Tab
