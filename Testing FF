@@ -294,7 +294,6 @@ if game.PlaceId == 445664957 and not _G.Loaded then -- Only run script if playin
 
     -- Level Section
     local Level_Section = MainTab:CreateSection("Fast XP")
-    if Is_fluxus then
         local Warning_Label = Level_Section:CreateLabel("Using this will give you 11m xp\nrepeatedly, stopping at lvl 250.")
         local Level_Button = Level_Section:CreateButton("Fast XP (!)", function()
             if UNSAFE and LocalPlayerData.Generic.Level.Value < 250 and not FastXP_Active then
@@ -309,9 +308,8 @@ if game.PlaceId == 445664957 and not _G.Loaded then -- Only run script if playin
                 end
             elseif UNSAFE and LocalPlayerData.Generic.Level.Value >= 250 then
                 Notify("FastXP cannot be used at level 250 or higher.")
-            end
-        end)
-    end
+        end
+    end)
 
     -- Teleport Tab
     local TPTab = MainUI:CreateTab("Teleports")
