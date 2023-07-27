@@ -301,12 +301,12 @@ if game.PlaceId == 445664957 and not _G.Loaded then -- Only run script if playin
                 Notify("The level cap for FastXP has been changed from 450 to 250 due to reports of bans.", false)
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/fardman88/RobloxStuff/main/hellalevels.lua"))()
                 while task.wait(5) do
-                    if LocalPlayerData.Generic.Level.Value >= 250 then
+                    if LocalPlayerData.Generic.Level.Value >= 333 then
                         LocalPlayer.Character.Humanoid.Health = 0
                         break
                     end
                 end
-            elseif UNSAFE and LocalPlayerData.Generic.Level.Value >= 250 then
+            elseif UNSAFE and LocalPlayerData.Generic.Level.Value >= 333 then
                 Notify("FastXP cannot be used at level 250 or higher.")
         end
     end)
